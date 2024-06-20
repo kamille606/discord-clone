@@ -51,3 +51,6 @@ npx prisma init
 npx prisma generate
 npx prisma db push
 npm i @prisma/client
+
+npm i uploadthing @uploadthing/react
+npm i axios
