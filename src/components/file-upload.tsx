@@ -8,15 +8,15 @@ import {UploadDropzone} from '@/lib/uploadthing'
 import '@uploadthing/react/styles.css'
 
 interface FileUploadProps {
-  onChange: (url?: string) => void
   value: string
   endpoint: 'messageFile' | 'serverImage'
+  onChange: (url?: string) => void
 }
 
 const FileUpload = ({
-                      onChange,
                       value,
-                      endpoint
+                      endpoint,
+                      onChange
                     }: FileUploadProps) => {
 
   const fileType = value?.split('.').pop()

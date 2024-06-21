@@ -44,6 +44,10 @@ npx shadcn-ui@latest add dropdown-menu
 npx shadcn-ui@latest add dialog
 npx shadcn-ui@latest add input
 npx shadcn-ui@latest add form
+npx shadcn-ui@latest add tooltip
+npx shadcn-ui@latest add separator
+npx shadcn-ui@latest add scroll-area
+
 
 npm i next-themes
 npm i -D prisma
@@ -54,3 +58,5 @@ npm i @prisma/client
 
 npm i uploadthing @uploadthing/react
 npm i axios
+npm i uuid
+npm i -D @types/uuid
