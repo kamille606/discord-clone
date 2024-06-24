@@ -60,3 +60,4 @@ npm i uploadthing @uploadthing/react
 npm i axios
 npm i uuid
 npm i -D @types/uuid
+npm i zustand
