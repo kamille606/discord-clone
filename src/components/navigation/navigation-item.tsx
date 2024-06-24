@@ -1,5 +1,6 @@
 'use client'
 
+import {useEffect, useState} from 'react'
 import {useParams, useRouter} from 'next/navigation'
 
 import {ActionTooltip} from '@/components/action-tooltip'
@@ -14,13 +15,22 @@ interface NavigationItemProps {
 }
 
 export const NavigationItem = ({
-                                 id,
-                                 name,
-                                 imageUrl
-                               }: NavigationItemProps) => {
+    id,
+    name,
+    imageUrl
+  }: NavigationItemProps) => {
 
   const params = useParams()
   const router = useRouter()
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) {
+    return null
+  }
 
   const onClick = () => {
     router.push(`/servers/${id}`)
@@ -42,8 +52,8 @@ export const NavigationItem = ({
           params?.serverId === id ? 'h-[36px]' : 'h-[8px]'
         )}/>
         <div className={cn(
-          "relative group flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transition-all overflow-hidden",
-          params?.serverId === id && "bg-primary/10 text-primary rounded-[16px]"
+          'relative group flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transition-all overflow-hidden',
+          params?.serverId === id && 'bg-primary/10 text-primary rounded-[16px]'
         )}>
           <Image
             fill
