@@ -1,22 +1,13 @@
 'use client'
 
-import {useEffect, useState} from 'react'
 import {Plus} from 'lucide-react'
 import {useModal} from '@/hooks/use-modal-store'
+
 import {ActionTooltip} from '@/components/action-tooltip'
 
 export const NavigationAction = () => {
 
   const {onOpen} = useModal()
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  if (!isMounted) {
-    return null
-  }
 
   return (
     <div>
@@ -25,7 +16,7 @@ export const NavigationAction = () => {
         align='center'
         label='Add a server'
       >
-        <button
+        <div
           onClick={() => onOpen("createServer")}
           className='group flex items-center'
         >
@@ -40,7 +31,7 @@ export const NavigationAction = () => {
               size={25}
             />
           </div>
-        </button>
+        </div>
       </ActionTooltip>
     </div>
   )

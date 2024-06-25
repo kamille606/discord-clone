@@ -1,6 +1,5 @@
 'use client'
 
-import {useEffect, useState} from 'react'
 import {useParams, useRouter} from 'next/navigation'
 
 import {ActionTooltip} from '@/components/action-tooltip'
@@ -15,22 +14,12 @@ interface NavigationItemProps {
 }
 
 export const NavigationItem = ({
-    id,
-    name,
-    imageUrl
-  }: NavigationItemProps) => {
-
+                                 id,
+                                 name,
+                                 imageUrl
+                               }: NavigationItemProps) => {
   const params = useParams()
   const router = useRouter()
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  if (!isMounted) {
-    return null
-  }
 
   const onClick = () => {
     router.push(`/servers/${id}`)
@@ -42,7 +31,7 @@ export const NavigationItem = ({
       align='center'
       label={name}
     >
-      <button
+      <div
         onClick={onClick}
         className='group relative flex items-center'
       >
@@ -59,9 +48,11 @@ export const NavigationItem = ({
             fill
             src={imageUrl}
             alt='Channel'
+            sizes='100%'
+            priority={true}
           />
         </div>
-      </button>
+      </div>
     </ActionTooltip>
   )
 }

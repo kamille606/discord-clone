@@ -28,6 +28,8 @@ const FileUpload = ({
           fill
           src={value}
           alt='upload'
+          sizes='100%'
+          priority={true}
           className='rounded-full'
         />
         <button
