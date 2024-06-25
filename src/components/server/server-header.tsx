@@ -1,3 +1,5 @@
+'use client'
+
 import {MemberRole} from '@prisma/client'
 import {
   ChevronDown, LogOut,
@@ -14,6 +16,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 
 import {ServerWithMembersWithProfiles} from '@/types'
+import {useModal} from '@/hooks/use-modal-store'
 
 interface ServerHeaderProps {
   server: ServerWithMembersWithProfiles
@@ -25,6 +28,8 @@ const ServerHeader = (
     server,
     role
   }: ServerHeaderProps) => {
+
+  const {onOpen} = useModal()
 
   const isAdmin = role === MemberRole.ADMIN
   const isModerator = isAdmin || role == MemberRole.MODERATIR
@@ -52,6 +57,7 @@ const ServerHeader = (
       >
         {isModerator && (
           <DropdownMenuItem
+            onClick={() => onOpen('invite', {server})}
             className='text-indigo-600 dark:text-indigo-400
             px-3 py-2 text-sm cursor-pointer'
           >
