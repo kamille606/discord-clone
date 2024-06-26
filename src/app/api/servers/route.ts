@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     const profile = await currentProfile()
 
     if (!profile) {
-      return new NextResponse('未验证', {status: 401})
+      return new NextResponse('验证失败', {status: 401})
     }
 
     const server = await db.server.create({
@@ -36,6 +36,6 @@ export async function POST(req: Request) {
     return NextResponse.json(server)
   } catch (error) {
     console.log('[servers post]', error)
-    return new NextResponse('网络错误', {status: 500})
+    return new NextResponse('服务器错误', {status: 500})
   }
 }

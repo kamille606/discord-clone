@@ -67,6 +67,7 @@ const ServerHeader = (
         )}
         {isAdmin && (
           <DropdownMenuItem
+            onClick={() => onOpen('editServer', {server})}
             className='px-3 py-2 text-sm cursor-pointer'
           >
             服务器设置
