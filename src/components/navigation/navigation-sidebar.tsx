@@ -1,4 +1,4 @@
-import {redirect} from 'next/navigation'
+import {auth} from '@clerk/nextjs/server'
 import {UserButton} from '@clerk/nextjs'
 
 import {ModeToggle} from '@/components/mode-toggle'
@@ -13,9 +13,8 @@ import {db} from '@/lib/db'
 export const NavigationSidebar = async () => {
 
   const profile = await currentProfile()
-
   if (!profile) {
-    return redirect('/')
+    return auth().redirectToSignIn()
   }
 
   const servers = await db.server.findMany({

@@ -1,3 +1,4 @@
+import {auth} from '@clerk/nextjs/server'
 import {redirect} from 'next/navigation'
 import {ChannelType} from '@prisma/client'
 
@@ -15,9 +16,8 @@ export const ServerSidebar = async (
   }: ServerSidebarProps) => {
 
   const profile = await currentProfile()
-
   if (!profile) {
-    return redirect('/')
+    return auth().redirectToSignIn()
   }
 
   const server = await db.server.findUnique({

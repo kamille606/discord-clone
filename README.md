@@ -54,6 +54,7 @@ npm i -D prisma
 npx prisma init
 npx prisma generate
 npx prisma db push
+npx prisma migrate reset
 npm i @prisma/client
 
 npm i uploadthing @uploadthing/react

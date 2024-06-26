@@ -18,8 +18,7 @@ const ServerIdLayout = async (
   const profile = await currentProfile()
 
   if (!profile) {
-    auth().redirectToSignIn()
-    return
+    return auth().redirectToSignIn()
   }
 
   const server = await db.server.findUnique({
