@@ -77,7 +77,7 @@ export const CreateServerModal = () => {
             Customize your server
           </DialogTitle>
           <DialogDescription className='text-center text-zinc-500'>
-            你好
+            服务器创建
           </DialogDescription>
         </DialogHeader>
 

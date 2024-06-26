@@ -1,5 +1,6 @@
 'use client'
 
+import {useEffect} from 'react'
 import * as zod from 'zod'
 import axios from 'axios'
 import {zodResolver} from '@hookform/resolvers/zod'
@@ -26,7 +27,6 @@ import {
 import {Input} from '@/components/ui/input'
 import {Button} from '@/components/ui/button'
 import FileUpload from '@/components/file-upload'
-import {useEffect} from 'react'
 
 const formSchema = zod.object({
   name: zod.string().min(1, {
@@ -81,7 +81,7 @@ export const EditServerModal = () => {
             Customize your server
           </DialogTitle>
           <DialogDescription className='text-center text-zinc-500'>
-            你好
+            服务器设置
           </DialogDescription>
         </DialogHeader>
 
