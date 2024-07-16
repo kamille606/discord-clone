@@ -1,7 +1,7 @@
 import {auth} from '@clerk/nextjs/server'
 import {redirect} from 'next/navigation'
 
-import {currentProfile} from '@/lib/current-profile'
+import {initialProfile} from '@/lib/initial-profile'
 import {db} from '@/lib/db'
 
 interface InviteCodePageProps {
@@ -15,7 +15,7 @@ const InviteCodePage = async (
     params
   }: InviteCodePageProps) => {
 
-  const profile = await currentProfile()
+  const profile = await initialProfile()
   if (!profile) {
     return auth().redirectToSignIn()
   }

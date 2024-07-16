@@ -47,7 +47,7 @@ npx shadcn-ui@latest add form
 npx shadcn-ui@latest add tooltip
 npx shadcn-ui@latest add separator
 npx shadcn-ui@latest add scroll-area
-
+npx shadcn-ui@latest add avatar
 
 npm i next-themes
 npm i -D prisma
@@ -62,3 +62,4 @@ npm i axios
 npm i uuid
 npm i -D @types/uuid
 npm i zustand
+npm i query-string

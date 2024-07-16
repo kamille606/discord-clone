@@ -8,16 +8,15 @@ export async function PATCH(
 ) {
   try {
     if (!params.serverId) {
-      return new NextResponse('缺少参数', {status: 401})
+      return new NextResponse('缺少参数', {status: 400})
     }
 
     const profile = await currentProfile()
-    const {name, imageUrl} = await req.json()
-
     if (!profile) {
       return new NextResponse('验证失败', {status: 401})
     }
 
+    const {name, imageUrl} = await req.json()
     const server = await db.server.update({
       where: {
         id: params.serverId,

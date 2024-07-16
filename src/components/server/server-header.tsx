@@ -32,8 +32,7 @@ const ServerHeader = (
   const {onOpen} = useModal()
 
   const isAdmin = role === MemberRole.ADMIN
-  const isModerator = isAdmin || role == MemberRole.MODERATIR
-
+  const isModerator = isAdmin || role == MemberRole.MODERATOR
 
   return (
     <DropdownMenu>

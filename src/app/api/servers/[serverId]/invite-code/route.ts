@@ -10,7 +10,7 @@ export async function PATCH(
 ) {
   try {
     if (!params.serverId) {
-      return new NextResponse('缺少参数', {status: 401})
+      return new NextResponse('缺少参数', {status: 400})
     }
 
     const profile = await currentProfile()
