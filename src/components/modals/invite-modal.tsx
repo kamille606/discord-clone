@@ -1,10 +1,10 @@
 'use client'
 
+import axios from 'axios'
 import {useState} from 'react'
 import {Check, Copy, RefreshCcw} from 'lucide-react'
 import {useModal} from '@/hooks/use-modal-store'
 import {useOrigin} from '@/hooks/use-origin'
-import axios from 'axios'
 
 import {
   Dialog,
