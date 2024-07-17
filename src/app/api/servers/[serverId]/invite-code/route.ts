@@ -30,7 +30,7 @@ export async function PATCH(
 
     return NextResponse.json(server)
   } catch (error) {
-    console.log('[SERVER_ID]', error)
+    console.log('[SERVER_INVITE_PATCH]', error)
     return new NextResponse('服务器错误', {status: 500})
   }
 }

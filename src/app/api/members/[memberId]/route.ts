@@ -51,7 +51,7 @@ export async function DELETE(
 
     return NextResponse.json(server)
   } catch (error) {
-    console.log('[MEMBER_ID_PATCH]', error)
+    console.log('[MEMBER_ID_DELETE]', error)
     return new NextResponse('服务器错误', {status: 500})
   }
 }

@@ -17,8 +17,8 @@ export async function POST(req: Request) {
     const server = await db.server.create({
       data: {
         profileId: profile.id,
-        name,
-        imageUrl,
+        name: name,
+        imageUrl: imageUrl,
         inviteCode: uuid4(),
         channels: {
           create: [
@@ -35,7 +35,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json(server)
   } catch (error) {
-    console.log('[servers post]', error)
+    console.log('[SERVERS POST]', error)
     return new NextResponse('服务器错误', {status: 500})
   }
 }
