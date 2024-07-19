@@ -1,7 +1,8 @@
 'use client'
 
-import {ReactNode} from 'react'
+import {ReactNode, useState} from 'react'
 import {Search} from 'lucide-react'
+import {CommandDialog, CommandEmpty, CommandInput, CommandList} from '@/components/ui/command'
 
 interface ServerSearchProps {
   data: {
@@ -16,9 +17,13 @@ interface ServerSearchProps {
 }
 
 const ServerSearch = ({data}: ServerSearchProps) => {
+
+  const [open, setOpen] = useState(false)
+
   return (
     <>
       <button
+        onClick={() => setOpen(true)}
         className='group px-2 py-2 rounded-md flex items-center gap-x-2 w-full
         hover:bg-zinc-700/10 dark:bg-zinc-700/50 transition'
       >
@@ -39,6 +44,14 @@ const ServerSearch = ({data}: ServerSearchProps) => {
           <span className='text-xs'>ctrl</span>K
         </kbd>
       </button>
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandInput placeholder='搜索频道或成员'/>
+        <CommandList>
+          <CommandEmpty>
+            NO
+          </CommandEmpty>
+        </CommandList>
+      </CommandDialog>
     </>
   )
 }

@@ -49,6 +49,7 @@ npx shadcn-ui@latest add separator
 npx shadcn-ui@latest add scroll-area
 npx shadcn-ui@latest add avatar
 npx shadcn-ui@latest add select
+npx shadcn-ui@latest add command
 
 npm i next-themes
 npm i -D prisma
